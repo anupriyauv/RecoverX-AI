@@ -1,0 +1,182 @@
+{
+  "case_name": "Damaged Storage Analysis - Demo 01",
+  "fragments": [
+    {
+      "id": 12,
+      "filename": "invoice_2026.pdf_frag1",
+      "fragment_type": "PDF",
+      "size": 1024,
+      "offset": 10240,
+      "status": "Recoverable"
+    },
+    {
+      "id": 48,
+      "filename": "invoice_2026.pdf_frag2",
+      "fragment_type": "PDF",
+      "size": 1024,
+      "offset": 11264,
+      "status": "Recoverable"
+    },
+    {
+      "id": 73,
+      "filename": "invoice_2026.pdf_frag3",
+      "fragment_type": "PDF",
+      "size": 1024,
+      "offset": 14336,
+      "status": "Partial"
+    },
+    {
+      "id": 150,
+      "filename": "family_photo.jpg_frag1",
+      "fragment_type": "JPEG",
+      "size": 8192,
+      "offset": 256000,
+      "status": "Recoverable"
+    },
+    {
+      "id": 151,
+      "filename": "family_photo.jpg_frag2",
+      "fragment_type": "JPEG",
+      "size": 2048,
+      "offset": 264192,
+      "status": "Recoverable"
+    },
+    {
+      "id": 200,
+      "filename": "transactions.csv",
+      "fragment_type": "CSV",
+      "size": 4096,
+      "offset": 512000,
+      "status": "Recoverable"
+    },
+    {
+      "id": 305,
+      "filename": "unknown_binary",
+      "fragment_type": "Unknown",
+      "size": 512,
+      "offset": 1024000,
+      "status": "Corrupted"
+    },
+    {
+      "id": 401,
+      "filename": "wiretap_recording.wav_frag1",
+      "fragment_type": "WAV",
+      "size": 8192,
+      "offset": 1048576,
+      "status": "Recoverable"
+    },
+    {
+      "id": 402,
+      "filename": "wiretap_recording.wav_frag2",
+      "fragment_type": "WAV",
+      "size": 4096,
+      "offset": 1056768,
+      "status": "Recoverable"
+    }
+  ],
+  "recovered_files": [
+    {
+      "id": 1,
+      "filename": "invoice_2026.pdf",
+      "file_type": "Document",
+      "category": "Financial",
+      "completeness": 87.0,
+      "integrity_score": 82.5,
+      "recovery_confidence": 94.0,
+      "sensitivity": "HIGH",
+      "priority": "HIGH",
+      "status": "Mostly recoverable"
+    },
+    {
+      "id": 2,
+      "filename": "family_photo.jpg",
+      "file_type": "Image",
+      "category": "Personal",
+      "completeness": 100.0,
+      "integrity_score": 98.0,
+      "recovery_confidence": 99.0,
+      "sensitivity": "LOW",
+      "priority": "MEDIUM",
+      "status": "Fully recoverable"
+    },
+    {
+      "id": 3,
+      "filename": "transactions.csv",
+      "file_type": "Database",
+      "category": "Financial",
+      "completeness": 95.0,
+      "integrity_score": 90.0,
+      "recovery_confidence": 89.0,
+      "sensitivity": "HIGH",
+      "priority": "HIGH",
+      "status": "Fully recoverable"
+    },
+    {
+      "id": 4,
+      "filename": "unknown_cache_001.bin",
+      "file_type": "Unknown",
+      "category": "System",
+      "completeness": 25.0,
+      "integrity_score": 10.0,
+      "recovery_confidence": 15.0,
+      "sensitivity": "LOW",
+      "priority": "LOW",
+      "status": "Not realistically recoverable"
+    },
+    {
+      "id": 5,
+      "filename": "wiretap_recording.wav",
+      "file_type": "Audio",
+      "category": "Surveillance",
+      "completeness": 85.0,
+      "integrity_score": 88.0,
+      "recovery_confidence": 91.0,
+      "sensitivity": "HIGH",
+      "priority": "HIGH",
+      "status": "AI Audio Reconstruction Required"
+    }
+  ],
+  "fragment_relationships": [
+    {
+      "fragment_a_id": 12,
+      "fragment_b_id": 48,
+      "confidence": 92.0,
+      "reasons": [
+        "Compatible file structure",
+        "Adjacent storage location",
+        "Matching content pattern"
+      ]
+    },
+    {
+      "fragment_a_id": 48,
+      "fragment_b_id": 73,
+      "confidence": 85.0,
+      "reasons": [
+        "Similar metadata",
+        "Consistent sequence"
+      ]
+    },
+    {
+      "fragment_a_id": 150,
+      "fragment_b_id": 151,
+      "confidence": 98.0,
+      "reasons": [
+        "JPEG magic bytes aligned",
+        "Adjacent storage location"
+      ]
+    }
+  ],
+  "evidence_relationships": [
+    {
+      "source_object_id": 1,
+      "target_object_id": 3,
+      "relationship_type": "references",
+      "confidence": 84.0,
+      "reasons": [
+        "CSV values match PDF totals",
+        "Timestamp proximity",
+        "Identical folder origin"
+      ]
+    }
+  ]
+}
